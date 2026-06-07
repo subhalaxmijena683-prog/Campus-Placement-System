@@ -81,11 +81,16 @@ const AdminLayout = () => {
         <Sidebar />
       </div>
       {open && (
-        <div className="fixed inset-0 z-40 lg:hidden">
-          <button className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} aria-label="Close menu" />
-          <Sidebar close={() => setOpen(false)} />
-        </div>
-      )}
+  <div className="fixed inset-0 z-40 lg:hidden">
+    <div
+      className="absolute inset-0 bg-black/40"
+      onClick={() => setOpen(false)}
+    />
+    <div className="relative z-50">
+      <Sidebar close={() => setOpen(false)} />
+    </div>
+  </div>
+)}
       <div className="lg:pl-72">
         <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 px-4 py-3 backdrop-blur">
           <div className="flex items-center justify-between">
